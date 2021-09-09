@@ -49,17 +49,3 @@ if ($last) {
     $confarray["message"] = 'conference could not be created.';
     echo json_encode($confarray);
 }
-/*
-array();
-$confarray["body"]["confID"] = $lastid;
-$confarray["body"]["confName"] = $data->confName;
-$confarray["body"]["confLieu"] = $data->confLieu;
-$confarray["body"]["confDomain"] = $data->confDomain;
-$confarray["body"]["sDate"] = $data->sDate;
-$confarray["body"]["eDate"] = $data->eDate;
-$confarray["body"]["email"] = $data->email;
-$confarray["body"]["wapp"] = $data->wapp;
-$confarray["body"]["facebook"] = $data->facebook;
-$confarray["body"]["instagram"] = $data->instagram;
-$confarray["body"]["telegram"] = $data->telegram;
-$confarray["body"]["twitter"] = $data->twitter;*/

@@ -54,33 +54,35 @@ document.addEventListener("DOMContentLoaded", () => {
         var eDate = document.getElementById("eDate").value;
         
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-        var theUrl = "http://localhost:8000/api/v1/create/createconf.php";
+        var theUrl = "http://localhost:8000/api/v1/update/updateconf.php";
         xmlhttp.open("POST", theUrl);
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('confid');
         var mydata = {
+            "confID": id,
             "confName": confName,
-            "confDomain": confDomain,
             "confLieu": confLieu,
+            "confDomain": confDomain,
+            "sDate": sDate,
+            "eDate": eDate,
             "email": email,
-            "facebook": facebook,
             "wapp": wapp,
+            "facebook": facebook,
             "instagram": instagram, 
             "telegram": telegram,
-            "twitter": twitter,
-            "sDate": sDate,
-            "eDate": eDate
+            "twitter": twitter   
         }
-        console.log(mydata);
         xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         xmlhttp.onload  = function() {
             var jsonResponse = xmlhttp.response;
+            console.log(jsonResponse)
             if(!(jsonResponse.includes("true"))){
-                setFormMessage(createAccountForm, "error", "error creating conference")
+                setFormMessage(createAccountForm, "error", "error updating conference")
             };
             createAccountForm.reset();
         };
         xmlhttp.send(JSON.stringify(mydata));
 
-        setFormMessage(createAccountForm, "success", "conference created successfuly");
-        window.location.replace("http://localhost:8000/");
+        setFormMessage(createAccountForm, "success", "conference updated successfuly");
     });
 });

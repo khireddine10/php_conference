@@ -41,31 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
-        var confName = document.getElementById("confName").value;
-        var confDomain = document.getElementById("confDomain").value;
-        var confLieu = document.getElementById("confLieu").value;
-        var email = document.getElementById("email").value;
-        var facebook =  document.getElementById("facebook").value;
-        var wapp =  document.getElementById("wapp").value;
-        var instagram =  document.getElementById("instagram").value;
-        var telegram = document.getElementById("telegram").value;
-        var twitter = document.getElementById("twitter").value;
+        var sessionName = document.getElementById("sessionName").value;
         var sDate = document.getElementById("sDate").value;
         var eDate = document.getElementById("eDate").value;
-        
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('confid');
         var xmlhttp = new XMLHttpRequest();   // new HttpRequest instance 
-        var theUrl = "http://localhost:8000/api/v1/create/createconf.php";
+        var theUrl = "http://localhost:8000/api/v1/create/createsession.php";
         xmlhttp.open("POST", theUrl);
         var mydata = {
-            "confName": confName,
-            "confDomain": confDomain,
-            "confLieu": confLieu,
-            "email": email,
-            "facebook": facebook,
-            "wapp": wapp,
-            "instagram": instagram, 
-            "telegram": telegram,
-            "twitter": twitter,
+            "sessionName": sessionName,
+            "confID": id,
             "sDate": sDate,
             "eDate": eDate
         }
@@ -74,13 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
         xmlhttp.onload  = function() {
             var jsonResponse = xmlhttp.response;
             if(!(jsonResponse.includes("true"))){
-                setFormMessage(createAccountForm, "error", "error creating conference")
+                setFormMessage(createAccountForm, "error", "session creating conference")
             };
             createAccountForm.reset();
         };
         xmlhttp.send(JSON.stringify(mydata));
 
-        setFormMessage(createAccountForm, "success", "conference created successfuly");
-        window.location.replace("http://localhost:8000/");
+        setFormMessage(createAccountForm, "success", "session created successfuly");
     });
 });

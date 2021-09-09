@@ -5,44 +5,44 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 include_once "../../config/connection.php";
-include_once "../../class/conferences.php";
 include "../../class/dates.php";
-include "../../class/contact.php";
 
 $database = new Database();
 $db = $database->getConnection();
-$conf = new conference($db);
 $date = new date($db);
-$contact = new contact($db);
+
+// insert new date
+
+function create_session($sessionName, $confID, $dateID, $db)
+{
+    $sqlquery = "insert into session (sessionName, confID, dateID) values (:sessionName, :confID, :dateID)";
+    $stmt = $db->prepare($sqlquery);
+    $stmt->bindParam(":sessionName", $sessionName);
+    $stmt->bindParam(":confID", $confID);
+    $stmt->bindParam(":dateID", $dateID);
+    $stmt->execute();
+    return true;
+}
 
 $data = json_decode(file_get_contents("php://input"));
-// insert new date
-$date->sDate = $data->sDate;
-$date->eDate = $data->eDate;
 
-// insert new contact
-$contact->email = $data->email;
-$contact->wapp = $data->wapp;
-$contact->facebook = $data->facebook;
-$contact->instagram = $data->instagram;
-$contact->telegram = $data->telegram;
-$contact->twitter = $data->twitter;
+// insert new session
+$session = $data->sessionName;
+$confid = $data->confID;
+$sdate = $data->sDate;
+$edate = $data->eDate;
 
-// insert new conference
-$conf->confName = $data->confName;
-$conf->confLieu = $data->confLieu;
-$conf->confDomain = $data->confDomain;
-$conf->dateID = $date->createDate();
-$conf->contactID = $contact->createContact();
-
-$last = $conf->createConf();
-$lastid = $last;
+// create date for session
+$date->sDate = $sdate;
+$date->eDate = $edate;
+$dateID = $date->createDate();
+$lastid = $dateID;
 $confarray = array();
-if ($last) {
+
+if (create_session($session, $confid, $lastid, $db)) {
     $confarray["success"] = "true";
-    $confarray["message"] = 'conference created successfully.';
+    $confarray["message"] = 'session created successfully.';
     $confarray["body"] = $data;
-    $confarray["confID"] = $lastid;
     echo json_encode($confarray);
 } else {
     $confarray["success"] = "false";
