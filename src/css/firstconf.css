@@ -1,0 +1,98 @@
+.main .section .first {
+  width: 100%;
+  height: 600px;
+  background: #5cdb95;
+}
+
+.main .section .first .ono {
+  color: white;
+  font-size: 50px;
+  padding-top: 50px;
+  padding-left: 50px;
+  font-family: "aleg";
+}
+.main .section .first input {
+  color: #000;
+  margin-left: 50px;
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+}
+.main .section .first img {
+  margin-left: 1000px;
+  margin-top: 80px;
+}
+
+.main .section .seconde {
+  height: 1000px;
+  padding: 30px 40px;
+}
+
+.main .section .seconde h1 {
+  font-size: 40px;
+  color: #05386b;
+  font-family: "aleg";
+}
+
+.main .section .seconde table {
+  width: 900px;
+  border: 2px solid #5cdb95;
+  padding: 10px 20px 10px 20px;
+  margin-top: 50px;
+  background: #5cdb95;
+  border-radius: 3%;
+}
+
+thead {
+  color: #fff;
+  height: 40px;
+}
+
+.main .section .seconde tr {
+  height: 40px;
+  color: #05386b;
+}
+
+.main .section .seconde .one {
+  border: 2px solid #5cdb95;
+  margin-left: 1000px;
+  padding-top: 20px;
+  padding-left: 30px;
+  height: 350px;
+  border-radius: 3%;
+  background: #5cdb95;
+}
+
+.main .section .seconde li {
+  height: 40px;
+  padding-top: 30px;
+  padding-left: 20px;
+  color: #05386b;
+}
+.main .section .seconde i {
+  padding-right: 10px;
+  color: #fff;
+}
+
+.main .section .seconde .one h2 {
+  padding-top: 10px;
+  height: 40px;
+  color: #05386b;
+}
+
+.main .section .first img {
+  margin-left: 700px;
+  margin-top: -9px;
+}
+
+.main .section .seconde .one {
+  border: 2px solid #5cdb95;
+  margin-left: 0px;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-left: 30px;
+  height: 350px;
+  border-radius: 3%;
+  background: #5cdb95;
+}

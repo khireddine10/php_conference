@@ -1,0 +1,51 @@
+.main .section .core{
+	height: 1500px;
+	background: #fff;
+}
+.main .section .core h1{
+	font-family: "aleg";
+	font-style: italic;
+	font-size: 120px;
+	color: #5CDB95;
+	margin-top: 80px;
+}
+
+.main .section .core .all div{
+	height: 600px;
+	width: calc(100% - 75%);
+	float: left;
+	margin: 80px 85px 0 80px;
+	border-radius: 5%;
+	border: 3px solid #05386B;
+}
+
+.main .section .core .all .zero{		
+	border: none;
+	float: none
+
+}
+.main .section .core .all .two{
+	margin: 80px 20px 0 20px;
+		
+}
+.main .section .core .all .one{
+	margin-left: 110px;
+		
+}
+
+.main .section .core .all h1{
+	font-size: 60px;
+	margin: 30px 0 0 0;
+}
+.main .section .core .all .xx{
+	margin-left: 30px;
+	border: none;
+	width: 300px;
+}
+.main .section .core .all p{
+	margin-top: 15px;
+}	
+.main .section .core img{
+	margin-bottom: 50px;
+
+}

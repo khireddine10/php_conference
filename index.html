@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conference</title>
+    <link rel="stylesheet" href="./src/css/style2.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+
+</head>
+<body>
+
+    <div class="main">
+        <!--Top menu -->
+        <div class="bar">
+            <div class="profile">
+                <img src="./img/imgg.jpg">
+                <h3>Conference site</h3>
+                <p>welcome</p>
+            </div>
+            <!--menu-->
+            <ul>
+                <li><a href="index.html">
+                   <span class=icon><i class="fas fa-home"></i></span><span id=item>Home</span>
+                </a></li>
+                <li><a href="login.html">
+                   <span class=icon><i class="fas fa-user-shield"></i></span><span id=item>Login</span>
+                </a></li>
+                <li><a href="login.asp">
+                    <span class=icon><i class="fas fa-user-shield"></i></span><span>Register</span>
+                </a></li>
+                <li><a href="conference.html">
+                   <span class=icon><i class="fas fa-angular"></i></span><span id=item>Conferences list</span>
+                </a></li>
+                <li><a href="contact.html">
+                   <span class=icon><i class="fas fa-address-book"></i></span><span id=item>Contact</span>
+                </a></li>
+            </ul>
+        </div>
+        <!--top bar -->
+        <div class="section">
+            <div class="top">
+                <div class="hamberger">
+                    <i class="fas fa-bars"></i>
+                    <span class="item">Menu</span>
+                </div>
+            </div>
+            <div class="core">
+                <div class="one">
+                    <img src="./img/img.webp">
+                </div>
+                <div class="two">
+                    <h1 class="lp">Welcome in our API conference</h1><h1 class="lp2">The Conference for Web APIs, API Design & Management</h1>
+                </div>
+            </div>
+            <div class="core2">
+                <div class="one">
+                    <h1 align="center">about</h1>
+                    <p align="center">you can easialy start a conference with our api</p>
+                    <p align="center">You can choose to “attend” the conference online from your home or office. In order to be accessible to all participants, all API Conference tracks will be streamed live. Using professional video technology, all lectures and workshops will be broadcast live. And that’s not all: You can also get in touch with our speakers and expo partners, even if you won’t be there!</p>
+                </div>
+                <div class="two"></div>
+            </div>
+            <div class="core3">
+                <div class="one"><h1 align="center">social media</h1><p align="center">Become part of our Social-Media-Community!</p>
+                    <p align="center" class="hah"><i class="fab fa-twitter-square"></i><i class="fab fa-google-plus-square"></i><i class="fab fa-facebook"></i>
+                    <i class="fab fa-google-plus-g"></i><i class="fas fa-envelope"></i></p>
+                </div>
+                <div class="two"><h1 align="center">BE INSPIRED!</h1><p align="center">Attend inspiring sessions and in-depth workshops to learn how you can push your API skills to the next level.</p></div>
+                <div class="th"><h1 align="center">Become a Sponsor!</h1><p align="center">We warmly invite you to join the API Conference community and become a sponsor.</p></div>
+                <div class="fo"><h1 align="center">Contact</h1><p align="center">+2130554797890</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var hamburger = document.querySelector(".hamberger");
+        hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    })
+    </script>
+</body>
+</html>

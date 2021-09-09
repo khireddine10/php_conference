@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Login / Sign Up Form</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="stylesheet" href="./src/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="createConf">
+            <h1 class="form__title">Create Conference</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="confName" class="form__input" autofocus placeholder="Conference Name">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="confLieu" autofocus placeholder="Conference Lieu">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="confDomain" autofocus placeholder="conferece Domain">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="email" autofocus placeholder="email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="facebook" autofocus placeholder="facebook">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="wapp" autofocus placeholder="wapp">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="instagram" autofocus placeholder="instagram">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="telegram" autofocus placeholder="telegram">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="twitter" autofocus placeholder="twitter">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="date" class="form__input" id="sDate" autofocus placeholder="conference start date">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="date" class="form__input" id="eDate" autofocus placeholder="conference end date">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+        </form>
+    </div>
+    <script src="./src/js/conf.js"></script>
+</body>

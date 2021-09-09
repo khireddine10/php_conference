@@ -1,0 +1,6 @@
+confirence: confID, confName, confLieu, confDomain, dateID, contactID
+cdate: dateID, sDate, eDate, liDate, aDate
+contact: contactID, email, wapp, facebook, instagram, telegram, twitter
+company: compID, compName, compLieu, compDomain, contactID
+user: userID, fName, lName, username, email, passwordHash, compID, confID, sessionID, role
+session: sessionID, sessionName, dateID, confID

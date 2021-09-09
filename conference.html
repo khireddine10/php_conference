@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conference</title>
+    <link rel="stylesheet" href="./src/css/style2.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/conference.css">
+    <link rel="stylesheet" href="./src/css/font.css">
+
+</head>
+<body>
+
+    <div class="main">
+        <!--Top menu -->
+        <div class="bar">
+            <div class="profile">
+                <img src="img/imgg.jpg">
+                <h3>Conference site</h3>
+                <p>welcome</p>
+            </div>
+            <!--menu-->
+            <ul>
+                <li><a href="index.html">
+                   <span class=icon><i class="fas fa-home"></i></span><span id=item>Home</span>
+                </a></li>
+                <li><a href="login.html">
+                   <span class=icon><i class="fas fa-user-shield"></i></span><span id=item>Login</span>
+                </a></li>
+                <li><a href="login.asp">
+                    <span class=icon><i class="fas fa-user-shield"></i></span><span>Register</span>
+                </a></li>
+                <li><a href="conference.html">
+                   <span class=icon><i class="fas fa-angular"></i></span><span id=item>Conferences list</span>
+                </a></li>
+                <li><a href="contact.html">
+                   <span class=icon><i class="fas fa-address-book"></i></span><span id=item>Contact</span>
+                </a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <!--top bar -->
+            <div class="top">
+                <div class="hamberger">
+                    <i class="fas fa-bars"></i>
+                    <span class="item">Menu</span>
+                </div>
+            </div>
+            <div class="first">
+                <div><h1 class="ono"><a href="createconf.html">Want to start a conferece?<a></h1>
+                    <h1 class="ono"><a href="createconf.html">click here?<a></h1>
+                </div>
+                <div><img src="img/arbre2.png"></div>
+            </div>
+            <div class="seconde">
+                <h1>conference schedule</h1>
+                <table id="mytable">
+                    <thead>
+                        <tr>
+                            <th colspan="2" align="left" >List of all conferences in the database </th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="core3">
+                <div class="one"><h1 align="center">social media</h1><p align="center">Become part of our Social-Media-Community!</p>
+                    <p align="center" class="hah"><i class="fab fa-twitter-square"></i><i class="fab fa-google-plus-square"></i><i class="fab fa-facebook"></i>
+                    <i class="fab fa-google-plus-g"></i><i class="fas fa-envelope"></i></p>
+                </div>
+                <div class="two"><h1 align="center">BE INSPIRED!</h1><p align="center">Attend inspiring sessions and in-depth workshops to learn how you can push your API skills to the next level.</p></div>
+                <div class="th"><h1 align="center">Become a Sponsor!</h1><p align="center">We warmly invite you to join the API Conference community and become a sponsor.</p></div>
+                <div class="fo"><h1 align="center">Contact</h1><p align="center">+2130554797890</p></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var hamburger = document.querySelector(".hamberger");
+        hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    })
+    </script>
+    <script src="./src/js/listconfs.js"></script>
+</body>
+</html>
