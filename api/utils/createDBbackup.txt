@@ -2,10 +2,10 @@ drop database confAPI;
 create database confAPI;
 use confAPI;
 
-CREATE TABLE IF NOT EXISTS `confdate` (
+CREATE TABLE IF NOT EXISTS `date` (
     `dateID` int(11) NOT NULL AUTO_INCREMENT,
-    `sDate` datetime NOT NULL,
-    `eDate` datetime NOT NULL,
+    `sDate` varchar(256) NOT NULL,
+    `eDate` varchar(256) NOT NULL,
     PRIMARY KEY (`dateID`),
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -53,11 +53,15 @@ CREATE TABLE IF NOT EXISTS `user` (
     `username` varchar(256) NOT NULL UNIQUE,
     `email` varchar(256) NOT NULL UNIQUE,
     `passwordHash` varchar(256) NOT NULL,
-    `contactID` int(11) NOT NULL UNIQUE,
     `compID` int(11),
+    `role` varchar(255) NOT NULL,
+    `confID` int(11) NOT NULL,
+    `sessionID` int(11) NOT NULL,
     PRIMARY KEY (`userID`),
     FOREIGN KEY (contactID) REFERENCES contact(contactID),
-    FOREIGN KEY (compID) REFERENCES company(compID)
+    FOREIGN KEY (compID) REFERENCES company(compID),
+    FOREIGN KEY (confID) REFERENCES conference(confID),
+    FOREIGN KEY (sessionID) REFERENCES session(sessionID),
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 
@@ -71,29 +75,5 @@ CREATE TABLE IF NOT EXISTS `session` (
     FOREIGN KEY (confID) REFERENCES conference(confID)
 )ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
-CREATE TABLE IF NOT EXISTS `presedent` (
-    `userID` int(11) NOT NULL,
-    `confID` int(11) NOT NULL,
-    FOREIGN KEY (userID) REFERENCES user(userID),
-    FOREIGN KEY (confID) REFERENCES conference(confID)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
-CREATE TABLE IF NOT EXISTS `researcher` (
-    `userID` int(11) NOT NULL,
-    `confID` int(11) NOT NULL,
-    `sessionID` int(11) NOT NULL,
-    FOREIGN KEY (userID) REFERENCES user(userID),
-    FOREIGN KEY (confID) REFERENCES conference(confID),
-    FOREIGN KEY (sessionID) REFERENCES session(sessionID)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
-
-CREATE TABLE IF NOT EXISTS `participant` (
-    `userID` int(11) NOT NULL,
-    `confID` int(11) NOT NULL,
-    `sessionID` int(11) NOT NULL,
-    FOREIGN KEY (userID) REFERENCES user(userID),
-    FOREIGN KEY (confID) REFERENCES conference(confID),
-    FOREIGN KEY (sessionID) REFERENCES session(sessionID)
-)ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 show tables;
